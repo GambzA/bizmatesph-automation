@@ -1,0 +1,33 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "java (buildArtifact)",
+			"mainClass": "bizmatesph.App",
+			"targetPath": "${workspaceFolder}/${workspaceFolderBasename}.jar",
+			"elements": [
+				"${compileOutput}",
+				"${dependencies}"
+			],
+			"problemMatcher": [],
+			"label": "java (buildArtifact): bizmatesph"
+		},
+		{
+			"label": "mvn",
+			"type": "shell",
+			"command": "mvn",
+			"args": [
+				"-q",
+				"help:effective-pom",
+				"-Doutput=effective-pom.xml",
+				"-f",
+				"path/to/your/pom.xml"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": []
+		}
+	]
+}
